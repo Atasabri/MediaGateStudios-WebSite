@@ -1,0 +1,55 @@
+E:\Asp.net MVC\Media Gate\Media Gate\bin\ApplicationInsights.config
+E:\Asp.net MVC\Media Gate\Media Gate\bin\Media Gate.dll.config
+E:\Asp.net MVC\Media Gate\Media Gate\bin\Media Gate.dll
+E:\Asp.net MVC\Media Gate\Media Gate\bin\Media Gate.pdb
+E:\Asp.net MVC\Media Gate\Media Gate\bin\Antlr3.Runtime.dll
+E:\Asp.net MVC\Media Gate\Media Gate\bin\EntityFramework.dll
+E:\Asp.net MVC\Media Gate\Media Gate\bin\EntityFramework.SqlServer.dll
+E:\Asp.net MVC\Media Gate\Media Gate\bin\LinqToTwitter.AspNet.dll
+E:\Asp.net MVC\Media Gate\Media Gate\bin\LinqToTwitter.net.dll
+E:\Asp.net MVC\Media Gate\Media Gate\bin\Microsoft.AI.Agent.Intercept.dll
+E:\Asp.net MVC\Media Gate\Media Gate\bin\Microsoft.AI.DependencyCollector.dll
+E:\Asp.net MVC\Media Gate\Media Gate\bin\Microsoft.AI.PerfCounterCollector.dll
+E:\Asp.net MVC\Media Gate\Media Gate\bin\Microsoft.AI.ServerTelemetryChannel.dll
+E:\Asp.net MVC\Media Gate\Media Gate\bin\Microsoft.AI.Web.dll
+E:\Asp.net MVC\Media Gate\Media Gate\bin\Microsoft.AI.WindowsServer.dll
+E:\Asp.net MVC\Media Gate\Media Gate\bin\Microsoft.ApplicationInsights.dll
+E:\Asp.net MVC\Media Gate\Media Gate\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\Asp.net MVC\Media Gate\Media Gate\bin\Microsoft.Web.Infrastructure.dll
+E:\Asp.net MVC\Media Gate\Media Gate\bin\Newtonsoft.Json.dll
+E:\Asp.net MVC\Media Gate\Media Gate\bin\System.Reactive.Core.dll
+E:\Asp.net MVC\Media Gate\Media Gate\bin\System.Reactive.Interfaces.dll
+E:\Asp.net MVC\Media Gate\Media Gate\bin\System.Reactive.Linq.dll
+E:\Asp.net MVC\Media Gate\Media Gate\bin\System.Reactive.PlatformServices.dll
+E:\Asp.net MVC\Media Gate\Media Gate\bin\System.Web.Helpers.dll
+E:\Asp.net MVC\Media Gate\Media Gate\bin\System.Web.Mvc.dll
+E:\Asp.net MVC\Media Gate\Media Gate\bin\System.Web.Optimization.dll
+E:\Asp.net MVC\Media Gate\Media Gate\bin\System.Web.Razor.dll
+E:\Asp.net MVC\Media Gate\Media Gate\bin\System.Web.WebPages.Deployment.dll
+E:\Asp.net MVC\Media Gate\Media Gate\bin\System.Web.WebPages.dll
+E:\Asp.net MVC\Media Gate\Media Gate\bin\System.Web.WebPages.Razor.dll
+E:\Asp.net MVC\Media Gate\Media Gate\bin\WebGrease.dll
+E:\Asp.net MVC\Media Gate\Media Gate\bin\EntityFramework.xml
+E:\Asp.net MVC\Media Gate\Media Gate\bin\EntityFramework.SqlServer.xml
+E:\Asp.net MVC\Media Gate\Media Gate\bin\Microsoft.AI.DependencyCollector.xml
+E:\Asp.net MVC\Media Gate\Media Gate\bin\Microsoft.AI.ServerTelemetryChannel.xml
+E:\Asp.net MVC\Media Gate\Media Gate\bin\Microsoft.AI.Web.xml
+E:\Asp.net MVC\Media Gate\Media Gate\bin\Microsoft.AI.WindowsServer.xml
+E:\Asp.net MVC\Media Gate\Media Gate\bin\Microsoft.ApplicationInsights.xml
+E:\Asp.net MVC\Media Gate\Media Gate\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\Asp.net MVC\Media Gate\Media Gate\bin\System.Reactive.Core.xml
+E:\Asp.net MVC\Media Gate\Media Gate\bin\System.Reactive.Interfaces.xml
+E:\Asp.net MVC\Media Gate\Media Gate\bin\System.Reactive.Linq.xml
+E:\Asp.net MVC\Media Gate\Media Gate\bin\System.Reactive.PlatformServices.xml
+E:\Asp.net MVC\Media Gate\Media Gate\bin\System.Web.Helpers.xml
+E:\Asp.net MVC\Media Gate\Media Gate\bin\System.Web.Mvc.xml
+E:\Asp.net MVC\Media Gate\Media Gate\bin\System.Web.Optimization.xml
+E:\Asp.net MVC\Media Gate\Media Gate\bin\System.Web.Razor.xml
+E:\Asp.net MVC\Media Gate\Media Gate\bin\System.Web.WebPages.xml
+E:\Asp.net MVC\Media Gate\Media Gate\bin\System.Web.WebPages.Deployment.xml
+E:\Asp.net MVC\Media Gate\Media Gate\bin\System.Web.WebPages.Razor.xml
+E:\Asp.net MVC\Media Gate\Media Gate\bin\Antlr3.Runtime.pdb
+E:\Asp.net MVC\Media Gate\Media Gate\bin\Newtonsoft.Json.xml
+E:\Asp.net MVC\Media Gate\Media Gate\obj\Release\Media Gate.csprojResolveAssemblyReference.cache
+E:\Asp.net MVC\Media Gate\Media Gate\obj\Release\Media Gate.dll
+E:\Asp.net MVC\Media Gate\Media Gate\obj\Release\Media Gate.pdb

@@ -1,0 +1,71 @@
+﻿@model Media_Gate.Models.Service
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Service</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+    </dl>
+</div>
+<div>
+    <h4> Images </h4>
+    <br />
+    @foreach (string item in Directory.GetFiles(Server.MapPath("~/Uploads/Services/Img"), Model.ID + "*"))
+    {
+        string name = Path.GetFileName(item);
+        <img src="~/Uploads/Services/Img/@name" alt="" width="100" height="100" /><span>&nbsp</span>
+    }
+    <br/>
+    <h4> Videos </h4>
+    <br />
+    @foreach (string item in Directory.GetFiles(Server.MapPath("~/Uploads/Services/videos"), Model.ID + "*"))
+    {
+        string namev = Path.GetFileName(item);
+        <video controls="controls" width="200" height="200">
+            <source src="~/Uploads/Services/videos/@namev" type="video/mp4" />
+        </video>
+    }
+    <br />
+    <h4> Details </h4>
+    <br />
+
+        <table class="table">
+            <tr>
+                <th>Detail Field</th>
+            </tr>
+                  @foreach (var item in Model.Service_Details)
+                  {
+                         <tr>
+                             <td>
+                                 @item.Detail
+                             </td>
+                         </tr>
+                  }
+      </table>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

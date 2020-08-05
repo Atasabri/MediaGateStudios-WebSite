@@ -1,0 +1,18 @@
+﻿@using Media_Gate.Models
+<table class="table">
+    <tr>
+        <th>Detail Field</th>
+    </tr>
+    @if (Session["Details"] != null)
+            {
+                foreach (var item in Session["Details"] as List<Content_Details>)
+                {
+            <tr>
+                <td>
+                    @item.Detail
+                </td>
+            </tr>
+        }
+    }
+</table>
+

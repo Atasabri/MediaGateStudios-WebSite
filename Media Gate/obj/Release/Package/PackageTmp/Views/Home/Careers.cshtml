@@ -1,0 +1,172 @@
+﻿@model Media_Gate.Models.Career
+    @using Media_Gate.Models
+@{
+    if(Model!=null)
+    {
+        ViewBag.Title = Model.Name;
+    }
+    else
+    {
+        ViewBag.Title = "No Careers";
+    }
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@section Head{
+   <li><a href="~/Home/Home" class="hvr-underline-from-center">Home</a></li>
+<li class="dropdown">
+    <a href="#" class="dropdown-toggle hvr-underline-from-center" data-toggle="dropdown">Company<b class="fa fa-caret-down"></b></a>
+    <ul class="dropdown-menu agile_short_dropdown">
+        <li><a href="~/Home/About">About US</a></li>
+        <li><a href="~/Home/Protofolio">Protofolio</a></li>
+    </ul>
+    @*<li><a href="~/Home/Services" class="hvr-underline-from-center">Services</a></li>*@
+<li class="dropdown">
+    <a href="~/Home/Services" class="dropdown-toggle hvr-underline-from-center" data-toggle="dropdown">Services<b class="fa fa-caret-down"></b></a>
+    <ul class="dropdown-menu agile_short_dropdown">
+        @foreach (var item in new DB().Services.ToList())
+        {
+            <li><a href="~/Home/Service_Single/@item.ID">@item.Name</a></li>
+        }
+        <li><a href="~/Home/Services">All</a></li>
+    </ul>
+</li>
+<li class="dropdown">
+    <a href="~/Home/Services" class="dropdown-toggle hvr-underline-from-center" data-toggle="dropdown">Content Solution<b class="fa fa-caret-down"></b></a>
+    <ul class="dropdown-menu agile_short_dropdown">
+        @foreach (var item in new DB().Contents.ToList())
+        {
+            <li><a href="~/Home/Content_Single/@item.ID">@item.Name</a></li>
+        }
+    </ul>
+</li>
+<li><a href="~/Home/Pricing" class="hvr-underline-from-center">Pricing</a></li>
+<li class="active"><a href="~/Home/Careers" class="hvr-underline-from-center">Careers</a></li>
+<li><a href="~/Home/Contacts" class="hvr-underline-from-center">Contact</a></li>
+}
+<div class="agile_inner_banner_info">
+</div>
+
+
+<br /><br />
+<h3 class="tittle_agile_w3">Careers</h3>
+<div class="heading-underline">
+    <div class="h-u1"></div><div class="h-u2"></div><div class="h-u3"></div><div class="clearfix"></div>
+</div>
+<br />
+@if (Model !=null)
+{
+    <div class="carrer">
+        <div class="container">
+            <div class="carrer-top">
+                <h3>@Model.Name</h3>
+            </div>
+            <div class="tabs-box">
+                <ul class="tabs-menu">
+                    @using Media_Gate.Models
+                    @foreach (var item in new DB().Careers.ToList())
+                {
+                        <li><a href="~/Home/Careers/@item.ID"><span> </span>@item.Name</a></li>
+                    }
+                </ul>
+                <div class="clearfix"> </div>
+                <div class="tab-grids">
+                    <div id="tab1" class="tab-grid">
+                        <div class="tb-one">
+                            <h3>Salary</h3>
+                            <p>@Model.Salary</p>
+                        </div>
+                        <div class="tb-one">
+                            <h3>Experience</h3>
+                            <p>@Model.Experience</p>
+                        </div>
+                        <div class="tb-one">
+                            <h3>Job Type</h3>
+                            <p>@Model.Type</p>
+                        </div>
+                        <div class="tb-one">
+                            <h3>Description</h3>
+                            <p>@Model.Description</p>
+                        </div>
+                        <div class="tb-one">
+                            <h3>Requirments</h3>
+                            @foreach (var item in Model.Career_Requirment)
+                            {
+                                <p>@item.Requirment.Name</p>
+                            }
+                        </div>
+                        <div class="tb-one">
+                            <h3>Skills</h3>
+
+                            @foreach (var item in Model.Career_Skill)
+                            {
+                                <p>@item.Skill.Name</p>
+                            }
+
+                        </div>
+                        <div class="tb-one">
+                            <h3>Apply for this position:</h3>
+                            <div class="tb-two">
+                                <form action="~/Home/Apply" method="post" enctype="multipart/form-data">
+                                    <input type="text" required="Required" name="Name" placeholder="Name" />
+                                    <input type="text" required="Required" name="Email" placeholder="Email" />
+                                    <input type="text" required="Required" name="Phone" placeholder="Phone" />
+                                    <textarea value="Message:" required="Required" name="Message" placeholder="Enter A Message ">Message</textarea>
+                                    <div class="file-upload">
+                                        <label for="upload" class="file-upload__label">Upload Your CV</label>
+                                        <input id="upload" class="file-upload__input" type="file" required="Required" name="file">
+                                    </div>
+                                    <input id="Hidden1" type="hidden" name="Careerid" value="@Model.ID" />
+                                    <div class="t-btn">
+                                        <input type="submit" value="Apply">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <h3 class="tittle_agile_w3"> No Careers</h3>
+    <div class="heading-underline">
+        <div class="h-u1"></div><div class="h-u2"></div><div class="h-u3"></div><div class="clearfix"></div>
+    </div>
+}
+            <style>
+                .file-upload {
+                    position: relative;
+                    display: inline-block;
+                }
+
+                .file-upload__label {
+                    display: block;
+                    padding: 1em 2em;
+                    color: #fff;
+                    background: #222;
+                    border-radius: .4em;
+                    transition: background .3s;
+                }
+
+                file-upload__label:hover {
+                    cursor: pointer;
+                    background: #000;
+                }
+
+                .file-upload__input {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    font-size: 1;
+                    width: 0;
+                    height: 100%;
+                    opacity: 0;
+                }
+            </style>
+<link href="~/Content/Careers/style.css" rel="stylesheet" />

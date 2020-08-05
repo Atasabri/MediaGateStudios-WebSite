@@ -1,0 +1,434 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MediaGateModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Admins">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Type" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Applicants">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Phone" Type="int" Nullable="false" />
+    <Property Name="Message" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CareersId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Career_Requirment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Reqirment_ID" Type="int" />
+    <Property Name="Career_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="Career_Skill">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Skill_ID" Type="int" />
+    <Property Name="Career_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="Careers">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Experience" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Type" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Salary" Type="float" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Contacts">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Subject" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Message" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Content">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Content_Details">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Detail" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="content_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Custom_Price">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DateOfDeadLine" Type="datetime" />
+    <Property Name="Message" Type="nvarchar(max)" />
+    <Property Name="Contact" Type="nvarchar(max)" />
+    <Property Name="Other" Type="nvarchar(max)" />
+    <Property Name="UsersID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="custom_videos">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Video_TypeID" Type="int" />
+    <Property Name="CustomOrder_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="Price_Orders">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PricingId" Type="int" Nullable="false" />
+    <Property Name="UsersID" Type="int" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Pricings">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Protoflios">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Requirments">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Service_Details">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Detail" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ServicesId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Services">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Skills">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Subscripers">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Teams">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Job" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Facebook" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Twitter" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Instgram" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Phone" Type="int" Nullable="false" />
+    <Property Name="Country" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="video_type">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Career_Re__Caree__4D94879B">
+    <End Role="Careers" Type="Self.Careers" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Career_Requirment" Type="Self.Career_Requirment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Careers">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Career_Requirment">
+        <PropertyRef Name="Career_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Career_Re__Reqir__4CA06362">
+    <End Role="Requirments" Type="Self.Requirments" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Career_Requirment" Type="Self.Career_Requirment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Requirments">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Career_Requirment">
+        <PropertyRef Name="Reqirment_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Career_Sk__Caree__534D60F1">
+    <End Role="Careers" Type="Self.Careers" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Career_Skill" Type="Self.Career_Skill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Careers">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Career_Skill">
+        <PropertyRef Name="Career_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Career_Sk__Skill__52593CB8">
+    <End Role="Skills" Type="Self.Skills" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Career_Skill" Type="Self.Career_Skill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Skills">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Career_Skill">
+        <PropertyRef Name="Skill_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Content_D__conte__71D1E811">
+    <End Role="Content" Type="Self.Content" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Content_Details" Type="Self.Content_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Content">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Content_Details">
+        <PropertyRef Name="content_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__custom_vi__Custo__59063A47">
+    <End Role="Custom_Price" Type="Self.Custom_Price" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="custom_videos" Type="Self.custom_videos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Custom_Price">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="custom_videos">
+        <PropertyRef Name="CustomOrder_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__custom_vi__Video__5812160E">
+    <End Role="video_type" Type="Self.video_type" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="custom_videos" Type="Self.custom_videos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="video_type">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="custom_videos">
+        <PropertyRef Name="Video_TypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CareersApplicants">
+    <End Role="Careers" Type="Self.Careers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Applicants" Type="Self.Applicants" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Careers">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Applicants">
+        <PropertyRef Name="CareersId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PricingPrice_Orders">
+    <End Role="Pricings" Type="Self.Pricings" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Price_Orders" Type="Self.Price_Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pricings">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Price_Orders">
+        <PropertyRef Name="PricingId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ServicesService_Details">
+    <End Role="Services" Type="Self.Services" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Service_Details" Type="Self.Service_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Services">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Service_Details">
+        <PropertyRef Name="ServicesId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UsersCustom_Price">
+    <End Role="Users" Type="Self.Users" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Custom_Price" Type="Self.Custom_Price" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Custom_Price">
+        <PropertyRef Name="UsersID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UsersPrice_Orders">
+    <End Role="Users" Type="Self.Users" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Price_Orders" Type="Self.Price_Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Price_Orders">
+        <PropertyRef Name="UsersID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MediaGateModelStoreContainer">
+    <EntitySet Name="Admins" EntityType="Self.Admins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Applicants" EntityType="Self.Applicants" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Career_Requirment" EntityType="Self.Career_Requirment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Career_Skill" EntityType="Self.Career_Skill" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Careers" EntityType="Self.Careers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Contacts" EntityType="Self.Contacts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Content" EntityType="Self.Content" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Content_Details" EntityType="Self.Content_Details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Custom_Price" EntityType="Self.Custom_Price" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="custom_videos" EntityType="Self.custom_videos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Price_Orders" EntityType="Self.Price_Orders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Pricings" EntityType="Self.Pricings" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Protoflios" EntityType="Self.Protoflios" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Requirments" EntityType="Self.Requirments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Service_Details" EntityType="Self.Service_Details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Services" EntityType="Self.Services" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Skills" EntityType="Self.Skills" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Subscripers" EntityType="Self.Subscripers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Teams" EntityType="Self.Teams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="video_type" EntityType="Self.video_type" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Career_Re__Caree__4D94879B" Association="Self.FK__Career_Re__Caree__4D94879B">
+      <End Role="Careers" EntitySet="Careers" />
+      <End Role="Career_Requirment" EntitySet="Career_Requirment" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Career_Re__Reqir__4CA06362" Association="Self.FK__Career_Re__Reqir__4CA06362">
+      <End Role="Requirments" EntitySet="Requirments" />
+      <End Role="Career_Requirment" EntitySet="Career_Requirment" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Career_Sk__Caree__534D60F1" Association="Self.FK__Career_Sk__Caree__534D60F1">
+      <End Role="Careers" EntitySet="Careers" />
+      <End Role="Career_Skill" EntitySet="Career_Skill" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Career_Sk__Skill__52593CB8" Association="Self.FK__Career_Sk__Skill__52593CB8">
+      <End Role="Skills" EntitySet="Skills" />
+      <End Role="Career_Skill" EntitySet="Career_Skill" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Content_D__conte__71D1E811" Association="Self.FK__Content_D__conte__71D1E811">
+      <End Role="Content" EntitySet="Content" />
+      <End Role="Content_Details" EntitySet="Content_Details" />
+    </AssociationSet>
+    <AssociationSet Name="FK__custom_vi__Custo__59063A47" Association="Self.FK__custom_vi__Custo__59063A47">
+      <End Role="Custom_Price" EntitySet="Custom_Price" />
+      <End Role="custom_videos" EntitySet="custom_videos" />
+    </AssociationSet>
+    <AssociationSet Name="FK__custom_vi__Video__5812160E" Association="Self.FK__custom_vi__Video__5812160E">
+      <End Role="video_type" EntitySet="video_type" />
+      <End Role="custom_videos" EntitySet="custom_videos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CareersApplicants" Association="Self.FK_CareersApplicants">
+      <End Role="Careers" EntitySet="Careers" />
+      <End Role="Applicants" EntitySet="Applicants" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PricingPrice_Orders" Association="Self.FK_PricingPrice_Orders">
+      <End Role="Pricings" EntitySet="Pricings" />
+      <End Role="Price_Orders" EntitySet="Price_Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ServicesService_Details" Association="Self.FK_ServicesService_Details">
+      <End Role="Services" EntitySet="Services" />
+      <End Role="Service_Details" EntitySet="Service_Details" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UsersCustom_Price" Association="Self.FK_UsersCustom_Price">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Custom_Price" EntitySet="Custom_Price" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UsersPrice_Orders" Association="Self.FK_UsersPrice_Orders">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Price_Orders" EntitySet="Price_Orders" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

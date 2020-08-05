@@ -1,0 +1,57 @@
+﻿@model Media_Gate.Models.Protoflio
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Protoflio</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        @if (new FileInfo(Server.MapPath("~/Uploads/Protoflio/Videos/" + Model.ID + ".mp4")).Exists)
+        {
+            <dt>
+                Video 
+            </dt>
+            <dd>
+                <video controls="controls">
+                    <source src="~/Uploads/Protoflio/Videos/@(Model.ID).mp4" type="video/mp4" />
+                </video>
+            </dd>
+        }
+        else if (new FileInfo(Server.MapPath("~/Uploads/Protoflio/pdf/" + Model.ID + ".pdf")).Exists)
+        {
+            <dt>
+                Pdf
+            </dt>
+            <dd>
+                 Pdf File
+            </dd>
+        }
+        else
+        {
+            <dt>
+                Photo
+            </dt>
+            <dd>
+                <img src="~/Uploads/Protoflio/Img/@(Model.ID).jpg" width="200" height="200" />
+            </dd>
+        }
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

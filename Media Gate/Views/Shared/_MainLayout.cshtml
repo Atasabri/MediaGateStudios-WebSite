@@ -1,0 +1,462 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title - Media Gate</title>
+    <!-- custom-theme -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Media Gate, Media, Gate, Studios,
+        Production, Artists, Art, game, Corprate, TV , Digital Content , Broadcast Tv Production,www.mediagatestudios.com,mediagatestudios
+          www.mediagatestudios.com" />
+    <script type="application/x-javascript">
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!-- //custom-theme -->
+    <link href="~/Content/Pricing/style.css" rel="stylesheet" />
+    <link href="~/Content/Videos/style.css" rel="stylesheet" />
+    <link href="~/Content/Styles/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/Content/Styles/slicebox.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/Styles/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/Content/Styles/blog.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/Content/Styles/single.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/Content/Styles/chocolat.css" rel="stylesheet" />
+    <!-- font-awesome-icons -->
+    <link href="~/Content/Styles/font-awesome.css" rel="stylesheet">
+    <!-- //font-awesome-icons -->
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic'
+          rel='stylesheet' type='text/css' />
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'><!--web font-->
+    <link href="//fonts.googleapis.com/css?family=Raleway:100i,200,200i,300,400,500,500i,600,700,700i,800,800i" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css"
+          rel="stylesheet" type='text/css'>
+    <link href="https://fortawesome.github.io/Font-Awesome/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
+</head>
+<body>
+    <!-- banner -->
+    <div class="agileits_top_menu">
+
+        <div class="w3l_header_left">
+            <ul>
+                <li><i class="fa fa-map-marker" aria-hidden="true"></i><a href="~/Home/Contacts">Cairo - Dubai</a></li>
+                <li><i class="fa fa-phone" aria-hidden="true"></i><a href="tel:01211113533"> +(012) 111 135 33</a></li>
+                <li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:info@mediagatestudios.com">info@mediagatestudios.com</a></li>
+            </ul>
+        </div>
+        <div class="w3l_header_right">
+            <div class="w3ls-social-icons text-left">
+                <a class="facebook" href="https://www.facebook.com/mediagatestudios/"><i class="fa fa-facebook"></i></a>
+                <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
+                <a class="pinterest" href="#"><i class="fa fa-pinterest-p"></i></a>
+                <a class="linkedin" href="https://www.linkedin.com/company/18224381/"><i class="fa fa-linkedin"></i></a>
+            </div>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+    <div class="agileits_w3layouts_banner_nav">
+        <nav class="navbar navbar-default">
+            <div class="navbar-header navbar-left">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <h1><a class="navbar-brand" href="~/Home/Home">MG  Studios</a></h1>       
+            </div>
+            <nav>
+    @using Media_Gate.Models
+    @if (Session["user"] == null)
+    {
+        <ul class="agile_forms">
+            <li><a class="active" href="#" data-toggle="modal" data-target="#myModal2"> Sign In</a> </li>
+            <li><a href="#" data-toggle="modal" data-target="#myModal3"> Sign Up</a> </li>
+        </ul>
+        <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+            <nav>
+                <ul class="nav navbar-nav">
+                    @RenderSection("Head")
+                    </ul>
+                </nav>
+
+            </div>
+
+    }
+    else
+    {
+        string a = Session["user"].ToString();
+        string name = new DB().Users.Single(x => x.Email == a).UserName;
+                    <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+                        <nav>
+                            <ul class="nav navbar-nav">
+                                @RenderSection("Head")
+                                <li class="dropdown">
+                                    <a href="#" class="hvr-underline-from-center" data-toggle="dropdown">@name<b class="fa fa-caret-down"></b></a>
+                                    <ul class="dropdown-menu agile_short_dropdown">
+                                        <li> @Html.ActionLink("Log Out", "Logout", "Home", null, null)</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+    }
+
+            </nav>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+
+    </nav>
+
+        <div class="clearfix"> </div>
+    </div>
+    <!-- Modal1 -->
+    <div class="modal fade" id="myModal2" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                    <div class="signin-form profile">
+                        <h3 class="agileinfo_sign">Sign In</h3>
+                        <div class="login-form">
+                            <form action="~/Home/Login" method="post">
+                                <input type="email" name="Email" placeholder="E-mail" required="Required">
+                                <input type="password" name="Password" placeholder="Password" required="Required">
+                                <div class="tp">
+                                    <input type="submit" value="Sign In">
+                                </div>
+                            </form>
+                        </div>
+                        <p><a href="#" data-toggle="modal" data-target="#myModal3"> Don't have an account?</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //Modal1 -->
+    <!-- Modal2 -->
+    <div class="modal fade" id="myModal3" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                    <div class="signin-form profile">
+                        <h3 class="agileinfo_sign">Sign Up</h3>
+                        <div class="login-form">
+                            <form action="~/Home/Signup" method="post">
+
+                                <input type="text" name="name" placeholder="User name" required="Required">
+                                <input type="email" id="email" name="email" placeholder="Email" required="Required">
+                                <input type="password" name="password" id="password1" placeholder="Password" required="Required">
+                                <input type="password" name="" id="password2" placeholder="Confirm Password" required="Required">
+                                <input type="text" id="phone" name="phone" placeholder="Phone" required="Required">
+
+                                <input type="text" name="country" placeholder="Country" required="Required">
+
+                                <input type="submit" id="signup" value="Sign Up">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div>
+        @RenderBody()
+    </div> 
+    <div class="footer">
+        <div class="container">
+            <div class="w3_agile_footer_grids">
+                @*<div class="col-md-4 w3_agile_footer_grid">
+                    <h3>Latest Tweets</h3>                  
+                    <ul class="agile_footer_grid_list">
+                        <li>
+                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                          @DEL.GetTwitterFeeds()[0].Text
+                        </li>
+                            <li><i class="fa fa-twitter" aria-hidden="true"></i>
+                        @DEL.GetTwitterFeeds()[1].Text</li>
+                    </ul>
+                </div>*@
+            <div class="col-md-4 w3_agile_footer_grid">
+                <h3>Navigation</h3>
+                <ul class="agileits_w3layouts_footer_grid_list">
+                    <li><i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="~/Home/Home">Home</a></li>
+                    <li><i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="~/Home/About">About</a></li>
+                    <li><i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="~/Home/Protofolio">Portfolio</a></li>
+                    <li><i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="~/Home/Contacts">Contact</a></li>
+                </ul>
+            </div>
+                
+                <div class="col-md-4 w3_agile_footer_grid">
+                    <h3>Navigation</h3>
+                    <ul class="agileits_w3layouts_footer_grid_list">
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="~/Home/Services">Services</a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="~/Home/Careers">Careers</a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="~/Home/Pricing">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 w3_agile_footer_grid">
+                    <h3>Our Team</h3>
+                    @foreach (var item in new DB().Teams.Take(6))
+                    {
+                        <div class="w3_agileits_footer_grid_left">
+                            <a href="#" data-toggle="modal" data-target="#myModal">
+                                <img src="~/Uploads/team/@(item.ID).jpg" alt="" class="img-responsive" />
+                            </a>
+                        </div>
+                    }  
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+            <div class="w3ls_address_mail_footer_grids">
+                <div class="col-md-4 w3ls_footer_grid_left">
+                    <div class="wthree_footer_grid_left">
+                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    </div>
+                    <p><span><a href="~/Home/Contacts"> Cairo , Dubai</a></span></p>
+                </div>
+                <div class="col-md-4 w3ls_footer_grid_left">
+                    <div class="wthree_footer_grid_left">
+                        <i class="fa fa-phone" aria-hidden="true"></i>
+                    </div>
+                    <p><span><a href="tel:01211113533">+(2)12 111 135 33</a></span></p>
+                </div>
+                <div class="col-md-4 w3ls_footer_grid_left">
+                    <div class="wthree_footer_grid_left">
+                        <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                    </div>
+                    <p>
+                        <a href="mailto:info@mediagatestudios.com">info@mediagatestudios.com</a>
+                    </p>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+            <div class="agileinfo_copyright">
+                <p>© 2017 Media Gate Studios. All Rights Reserved </p>
+            </div>
+        </div>
+    </div>
+    <!-- //footer -->
+    <!-- menu -->
+    <!-- js -->
+    <script type="text/javascript" src="~/Scripts/Script/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/Script/modernizr.custom.46884.js"></script>
+    <script src="~/Scripts/Script/move-top.js"></script>
+    <!-- password-script -->
+    <script type="text/javascript">
+		window.onload = function () {
+			document.getElementById("password1").onchange = validatePassword;
+			document.getElementById("password2").onchange = validatePassword;
+		}
+
+		function validatePassword() {
+			var pass2 = document.getElementById("password2").value;
+			var pass1 = document.getElementById("password1").value;
+			if (pass1 != pass2)
+				document.getElementById("password2").setCustomValidity("Passwords Don't Match");
+			else
+				document.getElementById("password2").setCustomValidity('');
+			//empty string means no validation error
+		}
+    </script>
+    <script>
+
+        var phone = document.getElementById("phone");
+        phone.onchange=function()
+        {
+            var p = document.getElementById("phone");
+            if (p.value.length > 11 ||isNaN(p.value))
+            {
+                document.getElementById("phone").setCustomValidity("Phone Must Be < 12 Number & No Chars");
+            } else {
+                document.getElementById("phone").setCustomValidity('');
+            }
+        }
+    </script>
+    <!-- //password-script -->
+    <!-- //js -->
+    <script src="~/Scripts/Script/bars.js"></script>
+
+    <script type="text/javascript" src="~/Scripts/Script/jquery.slicebox.js"></script>
+    <script type="text/javascript">
+		$(function () {
+
+			var Page = (function () {
+
+				var $navArrows = $('#nav-arrows').hide(),
+					$navDots = $('#nav-dots').hide(),
+					$nav = $navDots.children('span'),
+					$shadow = $('#shadow').hide(),
+					slicebox = $('#sb-slider').slicebox({
+						onReady: function () {
+
+							$navArrows.show();
+							$navDots.show();
+							$shadow.show();
+
+						},
+						onBeforeChange: function (pos) {
+
+							$nav.removeClass('nav-dot-current');
+							$nav.eq(pos).addClass('nav-dot-current');
+
+						}
+					}),
+
+					init = function () {
+
+						initEvents();
+
+					},
+					initEvents = function () {
+
+						// add navigation events
+						$navArrows.children(':first').on('click', function () {
+
+							slicebox.next();
+							return false;
+
+						});
+
+						$navArrows.children(':last').on('click', function () {
+
+							slicebox.previous();
+							return false;
+
+						});
+
+						$nav.each(function (i) {
+
+							$(this).on('click', function (event) {
+
+								var $dot = $(this);
+
+								if (!slicebox.isActive()) {
+
+									$nav.removeClass('nav-dot-current');
+									$dot.addClass('nav-dot-current');
+
+								}
+
+								slicebox.jump(i + 1);
+								return false;
+
+							});
+
+						});
+
+					};
+
+				return {
+					init: init
+				};
+
+			})();
+
+			Page.init();
+
+		});
+    </script>
+    <!-- Stats -->
+    <script src="~/Scripts/Script/waypoints.min.js"></script>
+    <script src="~/Scripts/Script/counterup.min.js"></script>
+    <script>
+		jQuery(document).ready(function ($) {
+			$('.counter').counterUp({
+				delay: 10,
+				time: 2000
+			});
+		});
+    </script>
+    <!-- //Stats -->
+
+    <script type="text/javascript" src="~/Scripts/Script/jquery.flexisel.js"></script>
+    <!-- flexisel -->
+    <script type="text/javascript">
+		$(window).load(function () {
+			$("#flexiselDemo1").flexisel({
+				visibleItems: 4,
+				animationSpeed: 1000,
+				autoPlay: true,
+				autoPlaySpeed: 3000,
+				pauseOnHover: true,
+				enableResponsiveBreakpoints: true,
+				responsiveBreakpoints: {
+					portrait: {
+						changePoint: 480,
+						visibleItems: 1
+					},
+					landscape: {
+						changePoint: 640,
+						visibleItems: 2
+					},
+					tablet: {
+						changePoint: 768,
+						visibleItems: 2
+					}
+				}
+			});
+
+		});
+    </script>
+    <!-- //flexisel -->
+    <!-- //flexisel -->
+    <!-- js for portfolio lightbox -->
+    <script src="~/Scripts/Script/jquery.chocolat.js "></script>
+    <!-- //menu -->
+    <!-- for bootstrap working -->
+    <script src="~/Scripts/Script/bootstrap.js"></script>
+    <!-- //for bootstrap working -->
+    <!-- start-smoth-scrolling -->
+    <script type="text/javascript" src="~/Scripts/Script/move-top.js"></script>
+    <script type="text/javascript" src="~/Scripts/Script/easing.js"></script>
+    <script type="text/javascript">
+		jQuery(document).ready(function ($) {
+			$(".scroll").click(function (event) {
+				event.preventDefault();
+				$('html,body').animate({
+					scrollTop: $(this.hash).offset().top
+				}, 1000);
+			});
+		});
+    </script>
+    <!-- start-smoth-scrolling -->
+    <!-- here stars scrolling icon -->
+    <script type="text/javascript">
+		$(document).ready(function () {
+			/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear'
+				};
+			*/
+
+			$().UItoTop({
+				easingType: 'easeOutQuart'
+			});
+
+		});
+
+
+
+    </script>
+
+    <!-- //here ends scrolling icon -->
+</body>
+</html>
+<link src="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">

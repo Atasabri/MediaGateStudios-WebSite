@@ -1,0 +1,107 @@
+﻿@model Media_Gate.Models.Custom_Price
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Custom Price</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOfDeadLine)
+        </dt>
+
+        <dd>
+            @if (Model.DateOfDeadLine != null)
+            {
+                @Html.DisplayFor(model => model.DateOfDeadLine)
+            }
+            else
+            {
+                <span>NO DATE</span>
+            }
+
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Message)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Message)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Contact)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Contact)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Other)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Other)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.User.UserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.UserName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.User.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.Email)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.User.Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.Phone)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.User.Country)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.Country)
+        </dd>
+        <dd>
+            @Html.ActionLink("Go To User", "Details", "Users", new { @id = Model.UsersID }, null)
+        </dd>
+    </dl>
+</div>
+<div>
+    <table class="table">
+        <tr>
+            <th>
+                Video Type
+            </th>
+        </tr>
+        @foreach (var item in Model.custom_videos)
+        {
+            <tr>
+                <td>
+                    @item.video_type.Name
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

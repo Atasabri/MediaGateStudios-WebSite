@@ -1,0 +1,212 @@
+﻿@model List<Media_Gate.Models.Protoflio>
+    @using Media_Gate.Models
+@{
+    ViewBag.Title = "Portfolio";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+@section Head{<li><a href="~/Home/Home" class="hvr-underline-from-center">Home</a></li>
+<li class="dropdown active">
+    <a href="#" class="dropdown-toggle hvr-underline-from-center" data-toggle="dropdown">Company<b class="fa fa-caret-down"></b></a>
+    <ul class="dropdown-menu agile_short_dropdown">
+        <li><a href="~/Home/About">About US</a></li>
+        <li class="active"><a href="~/Home/Protofolio">Portfolio</a></li>
+    </ul>
+    @*<li><a href="~/Home/Services" class="hvr-underline-from-center">Services</a></li>*@
+<li class="dropdown">
+    <a href="~/Home/Services" class="dropdown-toggle hvr-underline-from-center" data-toggle="dropdown">Services<b class="fa fa-caret-down"></b></a>
+    <ul class="dropdown-menu agile_short_dropdown">
+        @foreach (var item in new DB().Services.ToList())
+        {
+            <li><a href="~/Home/Service_Single/@item.ID">@item.Name</a></li>
+        }
+        <li><a href="~/Home/Services">All</a></li>
+    </ul>
+</li>
+<li class="dropdown">
+    <a href="~/Home/Services" class="dropdown-toggle hvr-underline-from-center" data-toggle="dropdown">Content Solution<b class="fa fa-caret-down"></b></a>
+    <ul class="dropdown-menu agile_short_dropdown">
+        @foreach (var item in new DB().Contents.ToList())
+        {
+            <li><a href="~/Home/Content_Single/@item.ID">@item.Name</a></li>
+        }
+    </ul>
+</li>
+<li><a href="~/Home/Pricing" class="hvr-underline-from-center">Pricing</a></li>
+<li><a href="~/Home/Careers" class="hvr-underline-from-center">Careers</a></li>
+<li><a href="~/Home/Contacts" class="hvr-underline-from-center">Contact</a></li>
+}
+<link href="~/Content/test.css" rel="stylesheet" />
+	<!-- //Modal2 -->
+<!-- /agile_inner_banner_info -->
+<div class="banner">
+
+
+    <div class="wrapper">
+
+        <ul id="sb-slider" class="sb-slider">
+            <li>
+                <a href="#"><img src="~/images/portfolio.jpg" alt="image1" /></a>
+            </li>
+        </ul>
+    </div>
+    <!-- /wrapper -->
+</div>
+@*<div class="agile_inner_banner_info" style="background: url(/images/portfolio.jpg)">
+</div>*@
+<!-- //agile_inner_banner_info -->
+<!-- events-top -->
+<div class="services">
+    <div class="container">
+        <div class="mid_agile_bannner_top_info">
+            <h1 class="tittle_agile_w3">Portfolio</h1>
+            <div class="heading-underline">
+                <div class="h-u1"></div><div class="h-u2"></div><div class="h-u3"></div><div class="clearfix"></div>
+            </div>
+            <p>At Media Gate Studios  ,We team up to create high quality for a diverse number of companies ,products ,services and marketing needs. Our work is available on various media platform ,you can view below: </p>
+        </div>
+        <div class="mid_agile_bannner_top_info">
+            <h4 class="tittle_agile_w3">Commercials</h4>
+            <div class="heading-underline">
+                <div class="h-u1"></div><div class="h-u2"></div><div class="h-u3"></div><div class="clearfix"></div>
+            </div>
+            <p>We manage every aspect of a commercial’s physical production from creative development, casting, and scriptwriting, to shooting, editing, visual effects, graphics, voice-over, music, finishing, and broadcast delivery. With a set of high quality equipements and universal minds.</p>
+        </div>
+        <div class="mid_agile_bannner_top_info">
+            <h4 class="tittle_agile_w3">Broadcast production</h4>
+            <div class="heading-underline">
+                <div class="h-u1"></div><div class="h-u2"></div><div class="h-u3"></div><div class="clearfix"></div>
+            </div>
+            <p>Our experience and expertise, as well as our relationships with production experts, allow us to create creative broadcast content tailor-made to each of our client's needs. We guarantee high quality, creative and out of the box approaches that fit for your needs.</p>
+        </div>
+        <div class="mid_agile_bannner_top_info">
+            <h4 class="tittle_agile_w3">Digital Production</h4>
+            <div class="heading-underline">
+                <div class="h-u1"></div><div class="h-u2"></div><div class="h-u3"></div><div class="clearfix"></div>
+            </div>
+            <p>From concept to completion, our creative team is with you every step of the way. We will write and develop a script, go on location and film, direct, edit, and deliver a final product you are satisfied with. </p>
+        </div>
+        <div class="mid_agile_bannner_top_info">
+            <h4 class="tittle_agile_w3">Music Videos</h4>
+            <div class="heading-underline">
+                <div class="h-u1"></div><div class="h-u2"></div><div class="h-u3"></div><div class="clearfix"></div>
+            </div>
+            <p>A music video integrates song and imagery, produced for promotional or artistic purposes. In Media Gate Studios we use a wide range of styles of contemporary video making techniques, to interpret a professional and creative images and scenes with a thematic and creative approach.</p>
+        </div>
+        <div class="mid_agile_bannner_top_info">
+            <h4 class="tittle_agile_w3">Gaming Studios  </h4>
+            <div class="heading-underline">
+                <div class="h-u1"></div><div class="h-u2"></div><div class="h-u3"></div><div class="clearfix"></div>
+            </div>
+            <p>The game industry has increased within the media workplace ,Media Gate Studio saw that is a must to have an impact in providing out of the box gaming with studios that are highly qualified with equipments that meet worldwide expectations.</p>
+        </div>
+        <h3 class="tittle_agile_w3">Images</h3>
+        <div class="heading-underline">
+            <div class="h-u1"></div><div class="h-u2"></div><div class="h-u3"></div><div class="clearfix"></div>
+        </div>
+        <ul class="portfolio_agile_info_w3ls">
+            @foreach (var item in Directory.GetFiles(Server.MapPath("~/Uploads/Protoflio/Img")))
+            {
+                string name = Path.GetFileNameWithoutExtension(item);
+                <li>
+                    <div class="agile_events_top_grid">
+                        <div class="w3_agileits_evets_text_img">
+                            <a href="~/Uploads/Protoflio/Img/@(name).jpg" class="lsb-preview" data-lsb-group="header">
+                                <div class="view view-eighth">
+                                    <img src="~/Uploads/Protoflio/Img/@(name).jpg" alt="" class="img-responsive" />
+                                    <div class="mask">
+                                        <i class="fa fa-eye" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="agileits_w3layouts_events_text port_info_agile">
+                            <h3>@Model.Find(x => x.ID == int.Parse(name)).Name</h3>
+                        </div>
+                    </div>
+                </li>
+            }
+        </ul>
+    </div>
+    <h3 class="tittle_agile_w3">Videos</h3>
+    <div class="heading-underline">
+        <div class="h-u1"></div><div class="h-u2"></div><div class="h-u3"></div><div class="clearfix"></div>
+    </div>
+    <ul class="portfolio_agile_info_w3ls test">
+        @foreach (string item in Directory.GetFiles(Server.MapPath("~/Uploads/Protoflio/Videos")))
+        {
+            string name = Path.GetFileNameWithoutExtension(item);
+            string S = Model.Find(x => x.ID == int.Parse(name)).Name;
+            <li>
+                <div class="agile_events_top_grid">
+                    <video controls="controls">
+                        <source src="~/Uploads/Protoflio/Videos/@(name).mp4" type="video/mp4" />
+                    </video>
+                    <div class="agileits_w3layouts_events_text port_info_agile">
+                        <h3>@S</h3>
+                    </div>
+                </div>
+            </li>
+        }
+        </ul>
+        <br />
+        <div>
+            <h3 class="tittle_agile_w3">Download Protofolio PDF Files</h3>
+            <div class="heading-underline">
+                <div class="h-u1"></div><div class="h-u2"></div><div class="h-u3"></div><div class="clearfix"></div>
+            </div>
+        </div>
+       <table class="table">
+            <tr>
+                <th><h2> File Name</h2></th>
+            </tr>
+            @foreach (var item in Directory.GetFiles(Server.MapPath("~/Uploads/Protoflio/pdf")))
+            {
+                int a = int.Parse(Path.GetFileNameWithoutExtension(item));
+                <tr>
+                    <td>
+                        <h3> @Model.Find(X => X.ID == a).Name </h3>
+                    </td>
+                    <td>
+                        @Html.ActionLink("Download", "Download", new { @id = a }, new { @class = "buttonDownload" })
+                    </td>
+                </tr>
+            }
+        </table>
+</div>
+<!-- //events-top -->
+<!-- js -->
+<script type="text/javascript" src="~/Scripts/Script/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="~/Scripts/Script/modernizr.custom.46884.js"></script>
+<!-- //js -->
+<!-- password-script -->
+<!-- //flexisel -->
+<!-- js for portfolio lightbox -->
+<script src="~/Scripts/Script/jquery.chocolat.js "></script>
+<link rel="stylesheet" href="~/Content/Styles/chocolat.css" type="text/css" media="screen">
+<!--light-box-files -->
+<script type="text/javascript ">
+    $(function () {
+        $('.w3_agileits_evets_text_img a').Chocolat();
+    });
+</script>
+<!-- //footer -->
+<!-- menu -->
+<!-- js -->
+<script type="text/javascript" src="~/Scripts/Script/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="~/Scripts/Script/modernizr.custom.46884.js"></script>
+<!-- //js -->
+<!-- password-script -->
+<!-- //password-script -->
+<!-- //flexisel -->
+<!-- js for portfolio lightbox -->
+<script src="~/Scripts/Script/jquery.chocolat.js"></script>
+<link rel="stylesheet " href="~/Content/Styles/chocolat.css" type="text/css " media="screen ">
+<!--light-box-files -->
+<script type="text/javascript ">
+    $(function () {
+        $('.w3_agileits_evets_text_img a').Chocolat();
+    });
+</script>
+<script src="~/Scripts/Videos/jquery-3.1.0.min.js"></script>
+
+

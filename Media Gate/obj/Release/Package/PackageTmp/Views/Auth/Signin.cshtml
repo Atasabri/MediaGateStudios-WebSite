@@ -1,0 +1,72 @@
+﻿@model Media_Gate.Models.Admin
+
+@{
+    ViewBag.Title = "Sign in";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Sign in</h2>
+
+@using (Html.BeginForm("Signin")) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>This Form Just For Admins</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control",@type="password" } })
+                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Log In" class="btn btn-default" />
+            </div>
+        </div>
+        @if(ViewBag.error!=null)
+        {
+           <span style="color:red">@ViewBag.error</span> 
+        }
+    </div>
+}
+<div>
+    <form action="~/Auth/testmail" method="post" enctype="multipart/form-data">
+        <input id="Text1" type="text" placeholder="Host" name="host" /><br />
+        <input id="Text1" type="number" placeholder="Port" name="port" /><br />
+        <input id="Text1" type="text" placeholder="From" name="from" /><br />
+        <input id="Text1" type="text" placeholder="Password" name="pass" /><br />
+        <input id="Text1" type="text" placeholder="To" name="to" /><br />
+        <input id="Text1" type="text" placeholder="Subject" name="subject" /><br />
+        EnableSSl = ><br />
+        <select id="Select1" name="enableSSL">
+            <option value="True">True</option>
+            <option value="False">False</option>
+        </select>
+        <br />
+        IsBodyHTML = ><br />
+        <select id="Select1" name="ishtml">
+            <option value="True">True</option>
+            <option value="False">False</option>
+        </select>
+        <br />
+        <input id="File1" type="file" name="file" />
+        <br />
+        <input id="Text1" type="text" name="body" />
+
+        <br /><br />
+        <input id="Submit1" type="submit" value="Send" />
+    </form>
+</div>

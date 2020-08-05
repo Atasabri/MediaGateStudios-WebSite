@@ -1,0 +1,18 @@
+﻿@using Media_Gate.Models
+<table class="table">
+    <tr>
+        <th>Skill Field</th>
+    </tr>
+    @if (Session["skill"] != null)
+    {
+        foreach (var item in Session["skill"] as List<Skill>)
+        {
+            <tr>
+                <td>
+                    @item.Name
+                </td>
+            </tr>
+        }
+    }
+</table>
+

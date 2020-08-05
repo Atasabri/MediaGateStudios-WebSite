@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Media Gate</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="icon" href="~/favicon.ico"/>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <span class="navbar-brand">@User.Identity.Name</span>
+                }
+                else
+                {
+                    @Html.ActionLink("Admin Panel", "Signin", "Auth", new { area = "" }, new { @class = "navbar-brand" })
+                }
+
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle hvr-underline-from-center" data-toggle="dropdown">Authorization<b class="fa fa-caret-down"></b></a>
+                        <ul class="dropdown-menu agile_short_dropdown">
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <li><a href="~/Auth/Logout">Log Out</a></li>
+                            }
+                            else
+                            {
+                                <li><a href="~/Auth/Signin">Sign In</a></li>
+                            }
+                            <li><a href="~/Auth/Index">Admin Control</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle hvr-underline-from-center" data-toggle="dropdown">Subscriptions<b class="fa fa-caret-down"></b></a>
+                        <ul class="dropdown-menu agile_short_dropdown">
+                            <li><a href="~/Users/Index">Users</a></li>
+                            <li><a href="~/Contacts/Index">Contacts</a></li>
+                            <li><a href="~/Subscripers/Index">Subscribers</a></li>
+                            <li><a href="~/All/All">All</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle hvr-underline-from-center" data-toggle="dropdown">About US<b class="fa fa-caret-down"></b></a>
+                        <ul class="dropdown-menu agile_short_dropdown">
+                            <li><a href="~/Teams/Index">Team</a></li>
+                            <li><a href="~/Protoflios/Index">Portfolio</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle hvr-underline-from-center" data-toggle="dropdown">Set Price<b class="fa fa-caret-down"></b></a>
+                        <ul class="dropdown-menu agile_short_dropdown">
+                            <li><a href="~/Pricings/Index">Pricing</a></li>
+                            <li><a href="~/Price_Orders/Index">Orders</a></li>
+                            <li><a href="~/Custom_Price/Index">Custom Pricing</a></li>
+                            <li><a href="~/video_type/Index">Video Type</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="~/Services/Index" class="hvr-underline-from-center">Services</a></li>
+                    <li><a href="~/Contents/Index" class="hvr-underline-from-center">Content Solution</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle hvr-underline-from-center" data-toggle="dropdown">Careers<b class="fa fa-caret-down"></b></a>
+                        <ul class="dropdown-menu agile_short_dropdown">
+                            <li><a href="~/Careers/Index">Careers</a></li>
+                            <li><a href="~/Requirments/Index">Requirments</a></li>
+                            <li><a href="~/Skills/Index">Skills</a></li>
+                          
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle hvr-underline-from-center" data-toggle="dropdown">User Interface<b class="fa fa-caret-down"></b></a>
+                        <ul class="dropdown-menu agile_short_dropdown">
+                            <li><a href="~/Home/Home">Home</a></li>
+                            <li><a href="~/Home/About">About Us</a></li>
+                            <li><a href="~/Home/Protofolio">Portfolio</a></li>
+                            <li><a href="~/Home/Pricing">Pricing</a></li>
+                            <li><a href="~/Home/Careers">Careers</a></li>
+                            <li><a href="~/Home/Contacts">Contacts</a></li>
+                        </ul>
+                    </li>                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Media Gate</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>

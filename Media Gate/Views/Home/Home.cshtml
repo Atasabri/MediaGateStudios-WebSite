@@ -1,0 +1,338 @@
+﻿@model List<Media_Gate.Models.Service>
+    @using Media_Gate.Models
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@section Head{<li class="active"><a href="~/Home/Home" class="hvr-underline-from-center">Home</a></li>
+<li class="dropdown">
+    <a href="#" class="dropdown-toggle hvr-underline-from-center" data-toggle="dropdown">Company<b class="fa fa-caret-down"></b></a>
+    <ul class="dropdown-menu agile_short_dropdown">
+        <li><a href="~/Home/About">About US</a></li>
+        <li><a href="~/Home/Protofolio">Portfolio</a></li>
+    </ul>
+    @*<li><a href="~/Home/Services" class="hvr-underline-from-center">Services</a></li>*@
+<li class="dropdown">
+    <a href="~/Home/Services" class="dropdown-toggle hvr-underline-from-center" data-toggle="dropdown">Services<b class="fa fa-caret-down"></b></a>
+    <ul class="dropdown-menu agile_short_dropdown">
+        @foreach (var item in new DB().Services.ToList())
+        {
+            <li><a href="~/Home/Service_Single/@item.ID">@item.Name</a></li>
+        }
+        <li><a href="~/Home/Services">All</a></li>
+    </ul>
+</li>
+<li class="dropdown">
+    <a href="~/Home/Services" class="dropdown-toggle hvr-underline-from-center" data-toggle="dropdown">Content Solution<b class="fa fa-caret-down"></b></a>
+    <ul class="dropdown-menu agile_short_dropdown">
+        @foreach (var item in new DB().Contents.ToList())
+        {
+            <li><a href="~/Home/Content_Single/@item.ID">@item.Name</a></li>
+        }
+    </ul>
+</li>
+<li><a href="~/Home/Pricing" class="hvr-underline-from-center">Pricing</a></li>
+<li><a href="~/Home/Careers" class="hvr-underline-from-center">Careers</a></li>
+<li><a href="~/Home/Contacts" class="hvr-underline-from-center">Contact</a></li>
+}
+<div class="banner">
+
+
+    <div class="wrapper">
+
+        <ul id="sb-slider" class="sb-slider">
+            <li>
+                <a href="#"><img src="~/images/banner1.jpg" alt="image1" /></a>
+            </li>
+            <li>
+                <a href="#"><img src="~/images/banner2.jpg" alt="image2" /></a>
+            </li>
+            <li>
+                <a href="#"><img src="~/images/banner3.jpg" alt="image1" /></a>
+            </li>
+            <li>
+                <a href="#"><img src="~/images/banner4.jpg" alt="image1" /></a>
+                @*<div class="sb-description">
+                    <h3>Affectionate Decision Maker</h3>
+                </div>*@
+            </li>
+
+        </ul>
+
+        <div id="shadow" class="shadow"></div>
+
+        <div id="nav-arrows" class="nav-arrows">
+            <a href="#">Next</a>
+            <a href="#">Previous</a>
+        </div>
+
+        <div id="nav-dots" class="nav-dots">
+            <span class="nav-dot-current"></span>
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </div>
+    </div>
+    <!-- /wrapper -->
+</div>
+<!-- banner-bottom -->
+<div class="banner-bottom">
+    <div class="container">
+        <div class="mid_agile_bannner_top_info">
+            <h2>Media Gate Studios</h2>
+            <div class="heading-underline">
+                <div class="h-u1"></div>
+                <div class="h-u2"></div>
+                <div class="h-u3"></div>
+                <div class="clearfix"></div>
+            </div>
+            <p>Media gate studios is a leading organization in providing inspiring media content and production with new techniques.</p>
+        </div>
+        <div class="col-md-6 agileits_banner_bottom_left">
+            <h3>welcome to <span>Media Gate</span></h3>
+            <p class="w3l_para">Welcome To the social community : you can keep in touch with us and know our latest news through different social websites </p>
+            <div class="w3l_social_icons">
+                <div class="w3l_social_icon_grid">
+                    <div class="w3l_social_icon_gridl w3_facebook">
+                        <a href="#">
+                            <i class="fa fa-facebook" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div class="w3l_social_icon_gridr">
+                        <p class="counter">23,536</p>
+                    </div>
+                    <div class="clearfix"> </div>
+                    <div class="w3l_social_icon_grid_pos">
+                        <label>-</label>
+                    </div>
+                </div>
+                <div class="w3l_social_icon_grid w3ls_social_icon_grid">
+                    <div class="w3l_social_icon_gridl w3_dribbble">
+                        <a href="#">
+                            <i class="fa fa-dribbble" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div class="w3l_social_icon_gridr">
+                        <p class="counter">13,676</p>
+                    </div>
+                    <div class="clearfix"> </div>
+                    <div class="w3l_social_icon_grid_pos">
+                        <label>-</label>
+                    </div>
+                </div>
+                <div class="w3l_social_icon_grid">
+                    <div class="w3l_social_icon_gridl w3_instagram">
+                        <a href="#">
+                            <i class="fa fa-instagram" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div class="w3l_social_icon_gridr">
+                        <p class="counter">45,342</p>
+                    </div>
+                    <div class="clearfix"> </div>
+                    <div class="w3l_social_icon_grid_pos">
+                        <label>-</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 agileits_banner_bottom_right">
+            <div class="w3ls_banner_bottom_right">
+                <img src="~/images/2.jpg" alt="" class="img-responsive" />
+                <div class="w3ls_banner_bottom_right_pos">
+                    <img src="~/images/1.jpg" alt="" class="img-responsive" />
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+</div>
+<!-- //banner-bottom -->
+<!-- banner-bottom-icons -->
+<div class="banner-bottom-icons">
+    <div class="col-md-6 w3_banner_bottom_icons_left">
+        <div class="w3_agile_banner_bottom" style="align-content:center">  
+            <h5 class="grow" style="align-content:center">About Us</h5>
+            <a href="~/Home/About" class="hvr-rectangle-out">
+                <img src="~/images/content1.jpg" alt="" class="img-responsive hvr-radial-in" />
+            </a>
+        </div>
+    </div>
+    <div class="col-md-6 w3_banner_bottom_icons_left">
+        <div class="w3_agile_banner_bottom">
+             <h5 class="grow">Portfolio</h5>
+            <a href="~/Home/Protofolio" class="hvr-rectangle-out"><img src="~/images/content2.jpg" alt="" class="img-responsive hvr-radial-in" /></a>
+        </div>
+    </div>
+    <div class="clearfix"> </div>
+</div>
+<!-- //banner-bottom-icons -->
+
+<!-- choose-us -->
+<div class="why-choose-agile">
+    <div class="container">
+        <h3 class="tittle_agile_w3 two">What We Do</h3>
+        <div class="heading-underline">
+            <div class="h-u1"></div>
+            <div class="h-u2"></div>
+            <div class="h-u3"></div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="why-choose-agile-grids-top">
+            <div class="col-md-4 agileits-w3layouts-grid">
+                <div class="wthree_agile_us">
+                    <div class="col-xs-3 agile-why-text">
+                        <div class="wthree_features_grid">
+                            <i class="fa fa-laptop" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="col-xs-9 agile-why-text">
+                        <h4>Sales conversion videos</h4>
+                        <p>Turning clicks to clients</p>
+                    </div>
+
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="wthree_agile_us">
+                    <div class="col-xs-3 agile-why-text">
+                        <div class="wthree_features_grid">
+                            <i class="fa fa-globe" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="col-xs-9 agile-why-text">
+                        <h4>Location or Studio Shooting</h4>
+                        <p>Creative and new sceneries </p>
+                    </div>
+
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="wthree_agile_us">
+                    <div class="col-xs-3 agile-why-text">
+                        <div class="wthree_features_grid">
+                            <i class="fa fa-life-ring" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="col-xs-9 agile-why-text">
+                        <h4>Logistics</h4>
+                        <p>affordable materials, and equipment with high quality </p>
+                    </div>
+
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+            <div class="col-md-4 agileits-w3layouts-grid">
+                <div class="wthree_agile_us">
+                    <div class="col-xs-3 agile-why-text">
+                        <div class="wthree_features_grid">
+                            <i class="fa fa-folder-open-o" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="col-xs-9 agile-why-text">
+                        <h4>Scriptwriting</h4>
+                        <p>The art of putting your ideas into words</p>
+                    </div>
+
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="wthree_agile_us">
+                    <div class="col-xs-3 agile-why-text">
+                        <div class="wthree_features_grid">
+                            <i class="fa fa-lightbulb-o" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="col-xs-9 agile-why-text">
+                        <h4>Media tracking and monitoring </h4>
+                        <p>An eye on media outlets</p>
+                    </div>
+
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="wthree_agile_us">
+                    <div class="col-xs-3 agile-why-text">
+                        <div class="wthree_features_grid">
+                            <i class="fa fa-users" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="col-xs-9 agile-why-text">
+                        <h4>Actor Casting</h4>
+                        <p>Choosing talents</p>
+                    </div>
+
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+            <div class="col-md-4 agileits-w3layouts-grid img">
+                <img src="~/images/serve.png" alt="" class="img-responsive" />
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+
+    </div>
+</div>
+	
+<!-- //choose-us -->
+<!-- News -->
+<div class="w3l-news-content events">
+    <div class="container">
+        <h3 class="tittle_agile_w3">Services</h3>
+        <div class="heading-underline">
+            <div class="h-u1"></div>
+            <div class="h-u2"></div>
+            <div class="h-u3"></div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="w3l-news_info_agile_its">
+            <div class="col-md-6 w3l-news">
+                @foreach (var item in Model)
+                {
+                    <div class="media response-info">
+                        <div class="media-left response-text-left">
+                            <a href="#" data-toggle="modal" data-target="#@item.ID">
+                                <img class="media-object" src="~/Uploads/Services/Img/@(item.ID).jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="media-body response-text-right">
+                            <h5>@item.Name</h5>
+                            <p>@string.Join(" ", item.Description.Split(' ').Take(15).ToArray()) .....</p>
+                            <div class="read">
+                                <a href="~/Home/Service_Single/@item.ID" class="view resw3">Read More</a>
+                            </div>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <div class="modal fade" id="@item.ID" tabindex="-1" role="dialog">
+                        <div class="modal-dialog">
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4>Media Gate</h4>
+                                    <img src="~/Uploads/Services/Img/@(item.ID).jpg" alt="service-image" />
+                                    <span>@item.Description</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+                <div class="clearfix"> </div>
+            </div>
+            <div class="col-md-6 wthree_events_grid_right">
+                <div class="wthree_events_grid_right1">
+                    <h3>News Letter</h3>
+                    <p>Never Miss Any Update From Us!</p>
+                    <div class="w3layouts_newsletter_right">
+                        <form action="~/Home/Subscribe" method="post">
+                            <input type="email" name="Email" placeholder="Email..." required="">
+                            <input type="submit" value="Subscribe">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+</div>
+

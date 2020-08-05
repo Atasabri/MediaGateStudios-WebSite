@@ -1,0 +1,21 @@
+﻿@using Media_Gate.Models
+<div id="VideoType">
+    <table class="table">
+        <tr>
+            <th>
+                Video Type
+            </th>
+        </tr>
+        @foreach (var item in Session["VideoType"] as List<video_type>)
+            {
+            <tr>
+                <td>
+                    @item.Name
+                </td>
+            </tr>
+        }
+
+    </table>
+
+</div>
+

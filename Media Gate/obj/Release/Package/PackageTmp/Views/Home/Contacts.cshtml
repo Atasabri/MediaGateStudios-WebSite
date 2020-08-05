@@ -1,0 +1,169 @@
+﻿
+@{
+    ViewBag.Title = "Contacts";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+@using Media_Gate.Models
+@section Head{<li><a href="~/Home/Home" class="hvr-underline-from-center">Home</a></li>
+<li class="dropdown">
+    <a href="#" class="dropdown-toggle hvr-underline-from-center" data-toggle="dropdown">Company<b class="fa fa-caret-down"></b></a>
+    <ul class="dropdown-menu agile_short_dropdown">
+        <li><a href="~/Home/About">About US</a></li>
+        <li><a href="~/Home/Protofolio">Protofolio</a></li>
+    </ul>
+    @*<li><a href="~/Home/Services" class="hvr-underline-from-center">Services</a></li>*@
+<li class="dropdown">
+    <a href="~/Home/Services" class="dropdown-toggle hvr-underline-from-center" data-toggle="dropdown">Services<b class="fa fa-caret-down"></b></a>
+    <ul class="dropdown-menu agile_short_dropdown">
+        @foreach (var item in new DB().Services.ToList())
+        {
+            <li><a href="~/Home/Service_Single/@item.ID">@item.Name</a></li>
+        }
+        <li><a href="~/Home/Services">All</a></li>
+    </ul>
+</li>
+<li class="dropdown">
+    <a href="~/Home/Services" class="dropdown-toggle hvr-underline-from-center" data-toggle="dropdown">Content Solution<b class="fa fa-caret-down"></b></a>
+    <ul class="dropdown-menu agile_short_dropdown">
+        @foreach (var item in new DB().Contents.ToList())
+        {
+            <li><a href="~/Home/Content_Single/@item.ID">@item.Name</a></li>
+        }
+    </ul>
+</li>
+<li><a href="~/Home/Pricing" class="hvr-underline-from-center">Pricing</a></li>
+<li><a href="~/Home/Careers" class="hvr-underline-from-center">Careers</a></li>
+<li class="active"><a href="~/Home/Contacts" class="hvr-underline-from-center">Contact</a></li>
+}
+<!-- //Modal2 -->
+<!-- /agile_inner_banner_info -->
+<div class="agile_inner_banner_info">
+</div>
+<!-- //agile_inner_banner_info -->
+<!-- contact -->
+<div class="services">
+    <div class="container">
+        <div class="w3ls_address_mail_footer_grids">
+            <div class="col-md-4 w3ls_footer_grid_left con">
+                <div class="wthree_footer_grid_left">
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                </div>
+                <p>3481 Melrose Place, Beverly Hills, <span>New York City 90210.</span></p>
+            </div>
+            <div class="col-md-4 w3ls_footer_grid_left con">
+                <div class="wthree_footer_grid_left">
+                    <i class="fa fa-phone" aria-hidden="true"></i>
+                </div>
+                <p>+(000) 123 4565 32 <span>+(010) 123 4565 35</span></p>
+            </div>
+            <div class="col-md-4 w3ls_footer_grid_left con">
+                <div class="wthree_footer_grid_left">
+                    <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                </div>
+                <p>
+                    <a href="mailto:info@example.com">info@example1.com</a>
+                    <span><a href="mailto:info@example.com">info@example2.com</a></span>
+                </p>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+</div>
+<div class="agileits_map">
+    <div class="container">
+        <h3 class="tittle_agile_w3">Find Us</h3>
+        <div class="heading-underline">
+            <div class="h-u1"></div><div class="h-u2"></div><div class="h-u3"></div><div class="clearfix"></div>
+        </div>
+    </div>
+    <div class="w3_services_grids">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m21!1m12!1m3!1d6906.40485142303!2d31.22403890000001!3d30.059731600000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m6!3e6!4m3!3m2!1d30.0597873!2d31.224017399999997!4m0!5e0!3m2!1sen!2seg!4v1505405315799" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+</div>
+<div class="services">
+    <div class="container">
+        <h3 class="tittle_agile_w3">Send Us Message</h3>
+        <div class="heading-underline">
+            <div class="h-u1"></div><div class="h-u2"></div><div class="h-u3"></div><div class="clearfix"></div>
+        </div>
+        <div class="agileinfo_mail_grids">
+            <form action="~/Home/Contacts" method="post">
+                <span class="input input--chisato">
+                    <input class="input__field input__field--chisato" name="Name" type="text" id="input-13" placeholder=" " required="" />
+                    <label class="input__label input__label--chisato" for="input-13">
+                        <span class="input__label-content input__label-content--chisato" data-content="Name">Name</span>
+                    </label>
+                </span>
+                <span class="input input--chisato">
+                    <input class="input__field input__field--chisato" name="Email" type="email" id="input-14" placeholder=" " required="" />
+                    <label class="input__label input__label--chisato" for="input-14">
+                        <span class="input__label-content input__label-content--chisato" data-content="Email">Email</span>
+                    </label>
+                </span>
+                <span class="input input--chisato">
+                    <input class="input__field input__field--chisato" name="Subject" type="text" id="input-15" placeholder=" " required="" />
+                    <label class="input__label input__label--chisato" for="input-15">
+                        <span class="input__label-content input__label-content--chisato" data-content="Subject">Subject</span>
+                    </label>
+                </span>
+                <textarea name="Message" placeholder="Your comment here..." required=""></textarea>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+</div>
+<!-- //contact -->
+<!-- //footer -->
+<!-- menu -->
+<!-- js -->
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="js/modernizr.custom.46884.js"></script>
+<!-- password-script -->
+
+<!-- //password-script -->
+
+<script src="js/classie.js"></script>
+<script>
+	(function() {
+		// trim polyfill : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
+		if (!String.prototype.trim) {
+			(function() {
+				// Make sure we trim BOM and NBSP
+				var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
+				String.prototype.trim = function() {
+					return this.replace(rtrim, '');
+				};
+			})();
+		}
+
+		[].slice.call( document.querySelectorAll( 'input.input__field' ) ).forEach( function( inputEl ) {
+			// in case the input is already filled..
+			if( inputEl.value.trim() !== '' ) {
+				classie.add( inputEl.parentNode, 'input--filled' );
+			}
+
+			// events:
+			inputEl.addEventListener( 'focus', onInputFocus );
+			inputEl.addEventListener( 'blur', onInputBlur );
+		} );
+
+		function onInputFocus( ev ) {
+			classie.add( ev.target.parentNode, 'input--filled' );
+		}
+
+		function onInputBlur( ev ) {
+			if( ev.target.value.trim() === '' ) {
+				classie.remove( ev.target.parentNode, 'input--filled' );
+			}
+		}
+	})();
+</script>
+<!-- for bootstrap working -->
+<script src="js/bootstrap.js"></script>
+<!-- //for bootstrap working -->
+<!-- start-smoth-scrolling -->
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+
+<!-- //here ends scrolling icon -->
+

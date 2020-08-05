@@ -1,0 +1,128 @@
+﻿@model Media_Gate.Models.Career
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Career</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Experience)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Experience)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Salary)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Salary)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+    </dl>
+</div>
+<div>
+    <h3>Applicants</h3>
+    <br />
+    <table class="table">
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Phone
+            </th>
+            <th>
+                Message
+            </th>
+        </tr>
+        @foreach (var item in Model.Applicants)
+        {
+            <tr>
+                <td>
+                    @item.Name
+                </td>
+                <td>
+                    @item.Email
+                </td>
+                <td>
+                    @item.Phone
+                </td>
+                <td>
+                    @item.Message
+                </td>
+                <td>
+                    @Html.ActionLink("Download", "Download", new { @id=item.ID})
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+<div>
+    <h3>Requirments</h3>
+    <br/>
+    <table class="table">
+
+        @foreach (var item in Model.Career_Requirment)
+        {
+            <tr>
+                <td>
+                 @item.Requirment.Name
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+<div>
+    <h3>Skills</h3>
+    <br />
+    <table class="table">
+        @foreach (var item in Model.Career_Skill)
+        {
+            <tr>
+                <td>
+                    @item.Skill.Name
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

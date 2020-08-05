@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e64094c2cfb845d99f8bc9f1d7c9cb6a" Name="Diagram1" ZoomLevel="67">
+        <EntityTypeShape EntityType="MediaGateModel.Admin" Width="1.5" PointX="0.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MediaGateModel.Applicant" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MediaGateModel.Career_Requirment" Width="1.5" PointX="3" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MediaGateModel.Career_Skill" Width="1.5" PointX="3" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MediaGateModel.Career" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MediaGateModel.Contact" Width="1.5" PointX="2.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MediaGateModel.Custom_Price" Width="1.5" PointX="8" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MediaGateModel.custom_videos" Width="1.5" PointX="10.25" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MediaGateModel.Price_Orders" Width="1.5" PointX="11" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MediaGateModel.Pricing" Width="1.5" PointX="8.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MediaGateModel.Protoflio" Width="1.5" PointX="10.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MediaGateModel.Requirment" Width="1.5" PointX="0.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MediaGateModel.Service_Details" Width="1.5" PointX="8" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MediaGateModel.Service" Width="1.5" PointX="5.75" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MediaGateModel.Skill" Width="1.5" PointX="0.75" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MediaGateModel.Subscriper" Width="1.5" PointX="10.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MediaGateModel.sysdiagram" Width="1.5" PointX="4.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MediaGateModel.Team" Width="1.5" PointX="6.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MediaGateModel.User" Width="1.5" PointX="5.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MediaGateModel.video_type" Width="1.5" PointX="8" PointY="7" IsExpanded="true" />
+        <AssociationConnector Association="MediaGateModel.FK_CareersApplicants" ManuallyRouted="false" />
+        <AssociationConnector Association="MediaGateModel.FK__Career_Re__Caree__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="MediaGateModel.FK__Career_Re__Reqir__4CA06362" ManuallyRouted="false" />
+        <AssociationConnector Association="MediaGateModel.FK__Career_Sk__Caree__534D60F1" ManuallyRouted="false" />
+        <AssociationConnector Association="MediaGateModel.FK__Career_Sk__Skill__52593CB8" ManuallyRouted="false" />
+        <AssociationConnector Association="MediaGateModel.FK__custom_vi__Custo__59063A47" ManuallyRouted="false" />
+        <AssociationConnector Association="MediaGateModel.FK_UsersCustom_Price" ManuallyRouted="false" />
+        <AssociationConnector Association="MediaGateModel.FK__custom_vi__Video__5812160E" ManuallyRouted="false" />
+        <AssociationConnector Association="MediaGateModel.FK_PricingPrice_Orders" ManuallyRouted="false" />
+        <AssociationConnector Association="MediaGateModel.FK_UsersPrice_Orders" ManuallyRouted="false" />
+        <AssociationConnector Association="MediaGateModel.FK_ServicesService_Details" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="MediaGateModel.Content" Width="1.5" PointX="12.375" PointY="3.875" />
+        <EntityTypeShape EntityType="MediaGateModel.Content_Details" Width="1.5" PointX="14.625" PointY="3.875" />
+        <AssociationConnector Association="MediaGateModel.FK__Content_D__conte__71D1E811" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

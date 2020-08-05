@@ -1,0 +1,135 @@
+﻿@model Media_Gate.Models.Career
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+
+@using (Ajax.BeginForm("Addrequirment", new AjaxOptions { UpdateTargetId = "requirment", HttpMethod = "Post", InsertionMode = InsertionMode.Replace }))
+{
+            <div class="form-group">
+               <span class="control-label col-md-2">Choose Requirment</span> 
+                <div class="col-md-10">
+                    @Html.DropDownList("reqID", new SelectList(new DB().Requirments, "ID", "Name"), new { @class = "form-control" })
+                </div>
+            </div>
+            <input id="Submit1" type="submit" value="Add Requirment" formaction="~/Careers/Addrequirment" />
+
+            <div id="requirment">
+                @using Media_Gate.Models
+                <table class="table">
+                <tr>
+                    <th>Requirment Field</th>
+                </tr>
+                    @if (Session["requirment"] != null)
+                    {
+                        foreach (var item in Session["requirment"] as List<Requirment>)
+                        {
+                            <tr>
+                                <td>
+                                    @item.Name
+                                </td>
+                            </tr>
+                        }
+                    }                 
+                </table>
+            </div> 
+        <br /><br />
+}
+@using (Ajax.BeginForm("Addskill", new AjaxOptions { UpdateTargetId = "skills", HttpMethod = "Post", InsertionMode = InsertionMode.Replace }))
+{
+        <div class="form-group">
+            <span class="control-label col-md-2">Choose Skill</span>
+            <div class="col-md-10">
+                @Html.DropDownList("skillID", new SelectList(new DB().Skills, "ID", "Name"), new { @class = "form-control" })
+            </div>
+        </div>
+        <input id="Submit1" type="submit" value="Add Skill" formaction="~/Careers/Addskill" />
+
+        <div id="skills">
+            @using Media_Gate.Models
+            <table class="table">
+                <tr>
+                    <th>Skill Field</th>
+                </tr>
+                @if (Session["skill"] != null)
+                {
+                    foreach (var item in Session["skill"] as List<Skill>)
+                    {
+                        <tr>
+                            <td>
+                                @item.Name
+                            </td>
+                        </tr>
+                    }
+                }
+            </table>
+        </div>
+}
+@using (Html.BeginForm())
+{
+@Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Career</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", @required = "Required" } })
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Experience, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Experience, new { htmlAttributes = new { @class = "form-control", @required = "Required" } })
+                @Html.ValidationMessageFor(model => model.Experience, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Type, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Type, new { htmlAttributes = new { @class = "form-control", @required = "Required" } })
+                @Html.ValidationMessageFor(model => model.Type, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Salary, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Salary, new { htmlAttributes = new { @class = "form-control", @required = "Required" } })
+                @Html.ValidationMessageFor(model => model.Salary, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control", @required = "Required" } })
+                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create Career" class="btn btn-default" />
+                </div>
+            </div>
+        
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+<script src="~/Scripts/jquery-1.10.2.intellisense.js"></script>

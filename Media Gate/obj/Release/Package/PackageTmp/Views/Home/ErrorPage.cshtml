@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "Error";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+@using Media_Gate.Models
+<br/><br/><br/><br/><br/><br/>
+<h3 class="tittle_agile_w3">Error</h3>
+<div class="heading-underline">
+    <div class="h-u1"></div><div class="h-u2"></div><div class="h-u3"></div><div class="clearfix"></div>
+</div>
+<br /><br /><br /><br /><br /><br />
+@section Head{<li><a href="~/Home/Home" class="hvr-underline-from-center">Home</a></li>
+<li class="dropdown">
+    <a href="#" class="dropdown-toggle hvr-underline-from-center" data-toggle="dropdown">Company<b class="fa fa-caret-down"></b></a>
+    <ul class="dropdown-menu agile_short_dropdown">
+        <li><a href="~/Home/About">About US</a></li>
+        <li><a href="~/Home/Protofolio">Protofolio</a></li>
+    </ul>
+    @*<li><a href="~/Home/Services" class="hvr-underline-from-center">Services</a></li>*@
+<li class="dropdown">
+    <a href="~/Home/Services" class="dropdown-toggle hvr-underline-from-center" data-toggle="dropdown">Services<b class="fa fa-caret-down"></b></a>
+    <ul class="dropdown-menu agile_short_dropdown">
+        @foreach (var item in new DB().Services.ToList())
+        {
+            <li><a href="~/Home/Service_Single/@item.ID">@item.Name</a></li>
+        }
+        <li><a href="~/Home/Services">All</a></li>
+    </ul>
+</li>
+<li class="dropdown">
+    <a href="~/Home/Services" class="dropdown-toggle hvr-underline-from-center" data-toggle="dropdown">Content Solution<b class="fa fa-caret-down"></b></a>
+    <ul class="dropdown-menu agile_short_dropdown">
+        @foreach (var item in new DB().Contents.ToList())
+        {
+            <li><a href="~/Home/Content_Single/@item.ID">@item.Name</a></li>
+        }
+    </ul>
+</li>
+<li><a href="~/Home/Pricing" class="hvr-underline-from-center">Pricing</a></li>
+<li><a href="~/Home/Careers" class="hvr-underline-from-center">Careers</a></li>
+<li><a href="~/Home/Contacts" class="hvr-underline-from-center">Contact</a></li>
+}
+
